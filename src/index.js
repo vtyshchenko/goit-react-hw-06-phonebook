@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { Provider } from 'react-redux';
+
 import './index.scss';
+import store from './redux/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Створи сховище з configureStore()
+// Створи дії збереження та видалення контакту, а також оновлення фільтра. Використовуй функцію createAction().
+// Створи редюсери контактів та фільтра. Використовуй функцію createReducer() або createSlice().
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
