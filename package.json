@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-04-hooks-phonebook",
+  "name": "goit-react-hw-06-hooks-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,20 +7,21 @@
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.7",
+    "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "formik": "^2.2.9",
+    "mini-css-extract-plugin": "^2.5.2",
     "modern-normalize": "^1.1.0",
     "proptypes": "^1.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.2",
-    "@reduxjs/toolkit": "^1.7.1",
-    "react-redux": "^7.2.6"
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,10 +50,10 @@
     ]
   },
   "devDependencies": {
+    "@redux-devtools/extension": "^3.1.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
-    "@redux-devtools/extension": "^3.1.0",
     "prop-types": "^15.7.2",
     "redux-logger": "^3.0.6",
     "sass": "^1.43.5"

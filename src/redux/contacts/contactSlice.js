@@ -8,21 +8,23 @@ export const contactsSlice = createSlice({
   },
   reducers: {
     addItem(state, action) {
-      console.log('state', state);
-      console.log('action', action);
-      if (
-        state.items.find(
-          contact => action.payload.namePeople.toLowerCase() === contact.name.toLowerCase(),
-        )
-      ) {
-        alert(`${action.payload.namePeople} is alredy in contacts`);
-      } else {
-        state.items.push({
-          id: action.payload.id,
-          name: action.payload.namePeople,
-          number: action.payload.number,
-        });
-      }
+      // console.log('state 123', state);
+      // console.log('action 123', action);
+      // if (
+      //   state.items.find(
+      //     contact => action.payload.namePeople.toLowerCase() === contact.name.toLowerCase(),
+      //   )
+      // ) {
+      //   console.log('find');
+      //   alert(`${action.payload.namePeople} is alredy in contacts`);
+      // } else {
+      //   console.log('not find');
+      state.items.push({
+        id: action.payload.id,
+        name: action.payload.name,
+        number: action.payload.number,
+      });
+      // }
     },
     deleteItem(state, action) {
       state.items = state.items.filter(contactItem => contactItem.id !== action.payload.id);
