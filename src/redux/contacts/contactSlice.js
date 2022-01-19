@@ -7,14 +7,29 @@ export const contactsSlice = createSlice({
     filter: '',
   },
   reducers: {
-    addItem: state => {
-      state.items += 1;
+    addItem(state, action) {
+      console.log('state', state);
+      console.log('action', action);
+      if (
+        state.items.find(
+          contact => action.payload.namePeople.toLowerCase() === contact.name.toLowerCase(),
+        )
+      ) {
+        alert(`${action.payload.namePeople} is alredy in contacts`);
+      } else {
+        state.items.push({
+          id: action.payload.id,
+          name: action.payload.namePeople,
+          number: action.payload.number,
+        });
+      }
     },
-    deleteItem: state => {
-      state.value -= 1;
+    deleteItem(state, action) {
+      state.items = state.items.filter(contactItem => contactItem.id !== action.payload.id);
+      // localStorage.setItem('contacts', JSON.stringify(state.items));
     },
-    changeFilter: state => {
-      state.value -= 1;
+    changeFilter(state, action) {
+      state.filter = action.payload.filter;
     },
   },
 });

@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 import ContactsItem from './ContactsItem';
 import styles from './Contacts.module.scss';
 
-function Contacts({ contactsList, onDelete }) {
+function Contacts({ onDelete }) {
+  const contactsList = useSelector(state => state.contacts.items);
+
   return contactsList.length > 0 ? (
     <ul>
       {contactsList.map(contactsItem => (
@@ -18,7 +21,6 @@ function Contacts({ contactsList, onDelete }) {
 }
 
 Contacts.propTypes = {
-  contctsList: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
 
