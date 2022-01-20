@@ -5,7 +5,7 @@ import styles from './Contacts.module.scss';
 
 function Contacts() {
   let contactsList = useSelector(state => state.contacts.items);
-  const filterText = useSelector(state => state.contacts.filterText);
+  const filterText = useSelector(state => state.contacts.filterText.toLowerCase());
 
   if (filterText) {
     contactsList = contactsList.filter(contactItem =>

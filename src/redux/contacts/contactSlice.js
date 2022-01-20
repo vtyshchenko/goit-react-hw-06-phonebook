@@ -38,7 +38,6 @@ export const contactsSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { addContact, deleteContact, changeFilter } = contactsSlice.actions;
 
 export default contactsSlice.reducer;
