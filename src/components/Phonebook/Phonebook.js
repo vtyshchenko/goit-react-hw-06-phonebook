@@ -1,7 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { changeFilter } from '../../redux/contacts/contactSlice';
+import { useSelector } from 'react-redux';
 
 import styles from './Phonebook.module.scss';
 import Contacts from './Contacts';

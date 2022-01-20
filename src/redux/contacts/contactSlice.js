@@ -31,7 +31,6 @@ export const contactsSlice = createSlice({
       state.items = state.items.filter(contactItem => {
         return contactItem.id !== action.payload.id;
       });
-      // localStorage.setItem('contacts', JSON.stringify(state.items));
     },
     changeFilter(state, action) {
       state.filterText = action.payload.filterText;

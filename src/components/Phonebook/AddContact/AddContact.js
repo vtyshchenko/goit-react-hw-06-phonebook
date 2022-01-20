@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 
@@ -72,9 +71,5 @@ function AddContact() {
     </form>
   );
 }
-
-AddContact.propTypes = {
-  onSubmit: PropTypes.func,
-};
 
 export default AddContact;
