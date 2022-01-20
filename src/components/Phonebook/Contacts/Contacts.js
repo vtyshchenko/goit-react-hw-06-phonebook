@@ -4,7 +4,14 @@ import ContactsItem from './ContactsItem';
 import styles from './Contacts.module.scss';
 
 function Contacts() {
-  const contactsList = useSelector(state => state.contacts.items);
+  let contactsList = useSelector(state => state.contacts.items);
+  const filterText = useSelector(state => state.contacts.filterText);
+
+  if (filterText) {
+    contactsList = contactsList.filter(contactItem =>
+      contactItem.name.toLowerCase().includes(filterText.toLowerCase()),
+    );
+  }
 
   return contactsList.length > 0 ? (
     <ul>

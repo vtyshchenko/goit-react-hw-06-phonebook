@@ -2,17 +2,20 @@ import styles from './ContactsItem.module.scss';
 import PropTypes from 'prop-types';
 
 import { useDispatch } from 'react-redux';
-import { deleteItem } from '../../../../redux/contacts/contactSlice';
+import { deleteContact } from '../../../../redux/contacts/contactSlice';
 
 const ContactsItem = ({ item }) => {
   const dispatch = useDispatch();
+
+  const onClick = () => dispatch(deleteContact({ id: item.id }));
+
   return (
     <>
       <span>
         {item.name}: {item.number}
       </span>
 
-      <button className={styles.button} type="button" onClick={() => dispatch(deleteItem(item.id))}>
+      <button className={styles.button} type="button" onClick={onClick}>
         Delete
       </button>
     </>

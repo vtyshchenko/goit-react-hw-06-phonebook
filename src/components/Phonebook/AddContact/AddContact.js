@@ -4,16 +4,14 @@ import { useDispatch } from 'react-redux';
 
 import { useState } from 'react';
 
-import { addItem } from '../../../redux/contacts/contactSlice';
+import { addContact } from '../../../redux/contacts/contactSlice';
 
 import styles from './AddContact.module.scss';
 
-function AddContact({ onSubmit }) {
+function AddContact() {
   const [namePeople, setNamePeople] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-
-  // const addContact = () => dispatch(addItem({}));
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -33,8 +31,7 @@ function AddContact({ onSubmit }) {
     event.preventDefault();
 
     const id = nanoid();
-    dispatch(addItem({ name: namePeople, number, id }));
-    // onSubmit({ namePeople, number, id });
+    dispatch(addContact({ name: namePeople, number, id }));
     reset();
   };
 

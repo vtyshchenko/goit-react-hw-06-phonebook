@@ -8,11 +8,11 @@ const items = createReducer([], {
   [actions.deleteContact]: (state, { payload }) => state.filter(({ id }) => id !== payload),
 });
 
-const filter = createReducer([], {
+const filterReduc = createReducer([], {
   [actions.changeFilter]: (_, { payload }) => payload,
 });
 
 export default combineReducers({
   items,
-  filter,
+  filterReduc,
 });
